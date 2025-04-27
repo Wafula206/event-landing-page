@@ -182,3 +182,31 @@ document.addEventListener('DOMContentLoaded', function() {
     
     animate();
 });
+    // Disable Right-Click
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Disable specific keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+        // Disable F12 (Inspect)
+        if (e.key === "F12") {
+            e.preventDefault();
+        }
+        // Disable Ctrl+Shift+I (Inspect)
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+        }
+        // Disable Ctrl+Shift+J (Console)
+        if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+            e.preventDefault();
+        }
+        // Disable Ctrl+U (View Source)
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+        }
+        // Disable Ctrl+Shift+C (Element Picker)
+        if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+            e.preventDefault();
+        }
+    });
